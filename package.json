@@ -1,0 +1,19 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "everyday exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MissJingRongLi/algorithm.git"
+  },
+  "author": "MissLi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MissJingRongLi/algorithm/issues"
+  },
+  "homepage": "https://github.com/MissJingRongLi/algorithm#readme"
+}
