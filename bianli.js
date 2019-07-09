@@ -25,7 +25,7 @@ function middleParse(pRoot){
 		return
 	}
 	middleParse(pRoot.left)
-	console.log(pRoot.val)
+	console.log(pRoot.value)
 	middleParse(pRoot.right)
 }
 //后序遍历
@@ -45,7 +45,7 @@ function cengxuParse(pRoot){
 	while(queue.length){
 		// 取出来的节点
 		p = queue.shift()
-		console.log(p.val)
+		console.log(p.value)
 		// 将其的左右孩子入队
 		if(p.left){
 			queue.push(p.left)
@@ -55,4 +55,6 @@ function cengxuParse(pRoot){
 		}
 	}
 }
+// module.exports = cengxuParse
+module.exports = middleParse
 cengxuParse(p)
