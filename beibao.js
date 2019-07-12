@@ -60,4 +60,47 @@ var pn = [2,3,1,4,2]
 var gn = [5,4,3,7,6]
 var tot = 10
 
-console.log(wakuang(x, pn, gn, tot))
+// console.log(wakuang(x, pn, gn, tot))
+
+// 砝码称重问题
+// 设有1g、2g、3g、5g、10g、20g的砝码各若干枚（其质量<=1000g），
+// 求出用他们能称出的质量的种类数(不包括质量为0的情况)
+
+function getWeight(w, arr, Allweight){
+	// w里面放6个砝码类型
+	// arr这个数组各个砝码的个数
+	// sum是砝码的总质量
+	// 设置dp存放每个质量能否被称重 
+	var dp = []
+	// 先定义第0种砝码能称的重量
+	for(var i = 0; i <= arr[0]; i++){
+		dp[i*w[0]] = 1
+	}
+	var currentWeight = 0
+	var newWeight = 0
+	var tempWeight = arr[0]*w[0]
+
+	// 从第一种砝码开始
+	for(var i = 1; i < 6; i++){
+		for(var j = 1; j <= arr[i]; j++){
+			// 循环每一种砝码
+			for(currentWeight = 0; currentWeight <= tempWeight; currentWeight++){
+				newWeight = currentWeight + w[i]*j
+				if(newWeight > Allweight){
+					break
+				}else{
+					if(dp[currentWeight] == 1 && dp[newWeight] != 1){
+						dp[newWeight] = 1
+					}
+				}
+			}
+		}
+		tempWeight = tempWeight + w[i]*j //更新每一次增加砝码后的最大重量
+	}
+
+	return dp
+}
+var w = [1,2,3,5,10,20]
+var arr = [1,1,0,0,1,0]
+var Allweight = 13
+console.log(getWeight(w,arr, Allweight));
