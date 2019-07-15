@@ -87,6 +87,7 @@ function getWeight(w, arr, Allweight){
 			for(currentWeight = 0; currentWeight <= tempWeight; currentWeight++){
 				newWeight = currentWeight + w[i]*j
 				if(newWeight > Allweight){
+					// 避免累加，忽略个数要求
 					break
 				}else{
 					if(dp[currentWeight] == 1 && dp[newWeight] != 1){
