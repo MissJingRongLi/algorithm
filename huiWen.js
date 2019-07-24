@@ -4,6 +4,7 @@
  * ------------转化--------------------
  * str ----给定的字符串
  * 求出其反串 str1
+ * 解法存在问题，对于连续的字符串判断不准确
  * 求出str 与 str1 的公共子序列长度
  */
 var max = (a1,a2)=>{
@@ -40,5 +41,6 @@ function huiWen(str){
 	// console.log(dp)
 	return str.length - dp[str.length-1][str.length -1]
 }
-var str = 'Ab3bD'
+var str = 'aabb'
 console.log(huiWen(str))
+// huiWen(str)
