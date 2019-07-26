@@ -10,7 +10,7 @@ var max = (a1,a2)=>{
 	return  a1>a2 ? a1 : a2
 }
 function shuta(N, dp){
-	// 倒着遍历
+	// 倒着遍历，从下往上
 	for(var i = N - 2; i >= 0; i--){
 		for(var j = 0; j <= N-2; j++){
 			dp[i][j] = max(dp[i+1][j], dp[i+1][j+1]) + dp[i][j]
