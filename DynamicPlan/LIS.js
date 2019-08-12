@@ -14,7 +14,7 @@ function getMax(arr){
 		}
 		dp[i] = ans
 	}
-	console.log(dp)
+	// console.log(dp)
 	return Math.max.apply(this,dp)
 }
 
@@ -79,4 +79,4 @@ function getMin(arr){
 	}
 	return b
 }
-console.log(getMin([389, 207, 155,300,299, 170, 158, 65]))
+console.log(getMax2([389, 207, 155,300,299, 170, 158, 65]))
